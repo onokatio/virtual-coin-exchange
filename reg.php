@@ -28,7 +28,7 @@
 
 if($_POST["post"] == "true"){
 //  if($_POST['g-recaptcha-response'] != "" && $_POST["mail"] != "" && $_POST["pass"] != ""){
-//    $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LerDBkTAAAAAEXXBVxriGhZQbGR51o0xMJjLviS&response=".$_POST['g-recaptcha-response']));
+//    $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=&response=".$_POST['g-recaptcha-response']));
 //    if($json->success == "true"){
       $already = mymysql("vc","vchello")->prepare("SELECT * FROM vc.account WHERE mail = :mail");
       $already->execute(array(":mail"=>$_POST["mail"]));
@@ -65,12 +65,12 @@ if($_POST["post"] == "true"){
    <div class="col-sm-10"><input type="password" name="pass" class="form-control" placeholder=""></input></div>
   </div>
   <div class="form-group">
-   <div class="g-recaptcha col-sm-10" data-theme="light" data-size="compact" data-sitekey="6LerDBkTAAAAAOn5dBGanqRMKGi3JQDiMfd2kC_s"></div>
+   <div class="g-recaptcha col-sm-10" data-theme="light" data-size="compact" data-sitekey=""></div>
    <noscript>
     <div style="width: 302px; height: 352px;">
      <div style="width: 302px; height: 352px; position: relative;">
       <div style="width: 302px; height: 352px; position: absolute;">
-       <iframe src="https://www.google.com/recaptcha/api/fallback?k=6Ldw2BATAAAAAGRgvi82jAqf-ZaJ_35gzXtxAZdT" frameborder="0" scrolling="no" style="width: 302px; height:352px; border-style: none;"></iframe>
+       <iframe src="https://www.google.com/recaptcha/api/fallback?k=" frameborder="0" scrolling="no" style="width: 302px; height:352px; border-style: none;"></iframe>
       </div>
       <div style="width: 250px; height: 80px; position: absolute; border-style: none; bottom: 21px; left: 25px; margin: 0px; padding: 0px; right: 25px;">
        <textarea style="color:#000000" id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"style="width: 250px; height: 80px; border: 1px solid #c1c1c1;margin: 0px; padding: 0px; resize: none;" value=""></textarea>
