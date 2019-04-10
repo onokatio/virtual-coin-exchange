@@ -28,7 +28,7 @@
 
 if($_POST["post"] == "true"){
 //  if($_POST['g-recaptcha-response'] != "" && $_POST["mail"] != "" && $_POST["pass"] != ""){
-    $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LerDBkTAAAAAEXXBVxriGhZQbGR51o0xMJjLviS&response=".$_POST['g-recaptcha-response']));
+    $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=&response=".$_POST['g-recaptcha-response']));
 //    if($json->success == "true"){
       $already = mymysql("vc","vchello")->prepare("SELECT * FROM vc.account WHERE mail = :mail");
       $already->execute(array(":mail"=>$_POST["mail"]));
